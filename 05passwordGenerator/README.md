@@ -1,8 +1,14 @@
-# React + Vite
+IN this i lern about how to make password ganerator 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+so i use usestate useeffect usecallback  and use ref
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+useState - This contain value and and a function to chage the state or value so to chages at multipal plase used to chage the state like input fild true or false chage the state
+
+useEffect hook = Use Effect take two argument first is function and secound is value in arry  so whenawer any value is effect in ui then it call the function
+
+
+usecallBack = it mamomize the function means the function we pass in use call back if it call whenver the depandecies is update then it rendrender the page many times so to refalet only chaged depandeccy we use usecallback hook
+
+
+ is used to the first is function argument and another is value container it ensure that if any value chage in container then only these changes will refelect in functio  not all

@@ -35,12 +35,18 @@ function App() {
   }, [length, numberAllowed, charAllowed])
 
 
+
+
+
   const copyPasswordTOClipBoard = useCallback(()=> {
     passwordRef.current?.select()
     passwordRef.current?.setSelectionRange(0,101)
     window.navigator.clipboard.writeText(password)
   
   }, [password])
+
+
+
 
 
   useEffect(() => { passwordGenerator() }, [length, numberAllowed, charAllowed, passwordGenerator])
@@ -50,9 +56,11 @@ function App() {
 
 
       <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-800 bg-gray-700'>
-        <h1 className=" text-center text-white">Password Generastor</h1>
+        <h1  className=" text-center text-white">Password Generastor</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
-          <input type="text" value={password} className='outline-none w-full py-1 px-3 ' placeholder='password' ref={passwordRef} readOnly />
+
+          
+          <input type="text" value={password} className='outline-none w-full py-1 px-3 ' placeholder='password' ref={passwordRef}  readOnly />
           
           <button onClick={copyPasswordTOClipBoard} className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'>Copy</button>
         </div>
@@ -67,7 +75,7 @@ function App() {
           </div>
           <div className='items-center flex gap-x-1'>
             <input type='checkbox' defaultChecked={numberAllowed} onChange={() => { setNumber((prev) => !prev) }} />
-            <label className='text-white' htmlFor='charInput'>Number</label>
+            <label  className='text-white' htmlFor='charInput'>Number</label>
           </div>
 
         </div>
@@ -77,3 +85,6 @@ function App() {
 }
 
 export default App
+
+
+
