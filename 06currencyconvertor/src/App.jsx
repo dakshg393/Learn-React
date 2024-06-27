@@ -8,15 +8,15 @@ import './App.css'
 
 function App() {
 
-  const [amount,setAmount] = useState(0)
+  const [amount, setAmount] = useState(1)
   const [from, setFrom] = useState("usd")
-  const [to, setTo] = useState("inr")
+  const [to, setTo] = useState("ai")
   const [convertedAmount, setConvertedAmount] = useState(0)
 
   const currencyInfo = useCurrencyInfo(from)
 
-  const options = currencyInfo? Object.keys(currencyInfo):[]
-
+  const options = currencyInfo ? Object.keys(currencyInfo) : []
+  
   const swap = () => {
     setFrom(to)
     setTo(from)
@@ -28,7 +28,7 @@ function App() {
     setConvertedAmount(amount * currencyInfo[to])
   }
 
- 
+
   return (
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
@@ -52,7 +52,7 @@ function App() {
                 currencyOptions={options}
                 onCurrecyChange={(currency) => setAmount(amount)}
                 selectCurrency={from}
-                onAmountChange={ (amount) => setAmount(amount) }
+                onAmountChange={(amount) => setAmount(amount)}
 
               />
             </div>
@@ -66,17 +66,18 @@ function App() {
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
+              
               <InputBox
                 label="To"
-                amount = {convertedAmount}
-                currecncyOptions={options}
-                onCurrecyChange={(currency)=>setTo(currency) }
+                amount={convertedAmount}
+                currencyOptions={options}
+                onCurrecyChange={(currency) => setTo(currency)}
                 selectCurrency={to}
                 amountDisable
               />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg" onClick={convert}>
-              Convert {from.toUpperCase} To {to.toUpperCase}
+              Convert {from.toUpperCase()} To {to.toUpperCase()}
             </button>
           </form>
         </div>
