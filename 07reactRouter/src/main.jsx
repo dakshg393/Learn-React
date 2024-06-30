@@ -34,18 +34,18 @@ import Github ,  { githubInfoLoder } from './components/Github/Github.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
-      <Route path="" element={ <Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="contactUs" element={<Contact />} />
-      <Route path="user/:userid" element={<User />} /> 
-      <Route path="github"
-       loader={githubInfoLoder} 
-       element={<Github />} /> 
+    <Route path='/' element={<Layout/>} >
+      <Route path='' element={<Home/>} />
+      <Route path='about' element={<About/>} />
+      <Route path='contactUs' element={<Contact/>} />
+      <Route path='user/:userid/:name' element={<User/>} />
+      <Route
+      loader={githubInfoLoder}
+      path='github' 
+      element={<Github/>} />
     </Route>
   )
 )
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
