@@ -1,10 +1,12 @@
-import React  from "react";
-import useTheme from "../context/theam";
+import React from "react";
+import useTheme from "../Context/theme";
 
-function ThemeBtn() {
+
+export default function ThemeBtn() {
     
-    const {themeMode,lightTheme,darkTheme} = useTheme()
-    const onChangeBtn = (e) => {
+    const {themeMode,lightTheme,darkTheme} =useTheme()
+
+    const onChangeBtn=(e)=>{
         const darkModeStatus = e.currentTarget.checked
         if(darkModeStatus){
             darkTheme()
@@ -13,6 +15,7 @@ function ThemeBtn() {
             lightTheme()
         }
     }
+
     return (
         <label className="relative inline-flex items-center cursor-pointer">
             <input
@@ -29,4 +32,3 @@ function ThemeBtn() {
 }
 
 
-export default ThemeBtn

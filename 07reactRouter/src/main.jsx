@@ -1,55 +1,58 @@
-import React, { Children } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { Route, RouterProvider , createBrowserRouter, createRoutesFromChildren, createRoutesFromElements } from 'react-router-dom'
-import Home from './components/Home/Home.jsx'
-import About from './components/About/About.jsx'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import Contact from './components/ContactUs/ContactUs.jsx'
+import About from './components/About/About.jsx'
+import Home from './components/Home/Home.jsx'
+import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
-import Github ,  { githubInfoLoder } from './components/Github/Github.jsx'
+import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
-// const router= createBrowserRouter([
+// const router = createBrowserRouter([
 //   {
 //     path:'/',
-//     element: <Layout />,
+//     element:<Layout />,
 //     children:[
 //       {
 //         path:"",
-//         element:<Home/>
+//         element:<Home />,
 //       },
 //       {
 //         path:"about",
-//         element: <About />
+//         element:<About />,
 //       },
 //       {
-//         path:"contactUs",
-//         element: <Contact />
+//         path:"contact",
+//         element:<Contact />,
+
 //       }
+
 //     ]
+
 //   }
 // ])
 
 
-const router = createBrowserRouter(
+const router= createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout/>} >
+    <Route path='/' element={<Layout/>}>
       <Route path='' element={<Home/>} />
-      <Route path='about' element={<About/>} />
-      <Route path='contactUs' element={<Contact/>} />
-      <Route path='user/:userid/:name' element={<User/>} />
+      <Route path="about" element={<About/>} />
+      <Route path="contact" element={<Contact/>} />
+      <Route path='user/:userid' element={<User/>} />
       <Route
-      loader={githubInfoLoder}
-      path='github' 
-      element={<Github/>} />
+      loader={githubInfoLoader}
+       path='github'
+        element={<Github/>}
+         />
     </Route>
   )
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-    <RouterProvider router={router} />
+    <RouterProvider  router={router} />
   </React.StrictMode>,
 )

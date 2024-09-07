@@ -1,6 +1,5 @@
-import React from 'react'
-import {Link ,NavLink} from 'react-router-dom'
-
+import React from "react"
+import {Link , NavLink} from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -21,12 +20,12 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <NavLink to="/" className={({isActive})=> `hover:underline ${isActive? "text-orange-700" : "text-black-700"}`}>
+                                    <NavLink to="/" className={({isActive})=> `hover:underline ${isActive?"text-orange-700":"text-gray-700" }`}>
                                         Home
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='about' className={ ({isActive}) =>  `${(isActive) ? "text-orange-700" : "text-black-700"} hover:underline` }>
+                                    <NavLink to="/about" className={({isActive})=> ` hover:underline ${isActive? "text-orange-700": "text-gray-700"} `}>
                                         About
                                     </NavLink>
                                 </li>
@@ -74,7 +73,7 @@ export default function Footer() {
                     <span className="text-sm text-gray-500 sm:text-center">
                         © 2023
                         <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            dakshg393
+                            hiteshchoudhary
                         </a>
                         . All Rights Reserved.
                     </span>

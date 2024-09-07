@@ -33,8 +33,9 @@ function App() {
 
 
   }, [length, numberAllowed, charAllowed])
+  
 
-
+  useEffect(() => { passwordGenerator() }, [length, numberAllowed, charAllowed, passwordGenerator])
 
 
 
@@ -45,11 +46,6 @@ function App() {
   
   }, [password])
 
-
-
-
-
-  useEffect(() => { passwordGenerator() }, [length, numberAllowed, charAllowed, passwordGenerator])
 
   return (
     <>
