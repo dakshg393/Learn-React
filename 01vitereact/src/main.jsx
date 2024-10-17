@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import './App.css'
 
 function MyApp(){
     return(
-        <h1>Hello This is My App Function Creating in Main.jsx </h1>
+        <h1 className='h'>Hello This is My App Function Creating in Main.jsx </h1>
     )
 }
 
@@ -24,24 +25,24 @@ function MyApp(){
 
 const anotherElement = (
 
-    <a href='http://google.com' target='_blank'> click hear to vsit google</a>
+    <a href='http://google.com' target='_blank' > click hear to vsit google</a>
 
 )
 
-const anotheruser = "Daksh "
+// const anotheruser = "Daksh "
 
-const reactElement= React.createElement(
-    'a',
-    {href : 'https://google.com', target : "_blank"},
-    'click hear to go on google',
-    anotheruser
+// const reactElement= React.createElement(
+//     'a',
+//     {href : 'https://google.com', target : "_blank"},
+//     'click hear to go on google',
+//     anotheruser
 
-)
+// )
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
-   reactElement
+   <MyApp/>
   
 )

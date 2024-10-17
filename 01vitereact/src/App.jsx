@@ -8,7 +8,7 @@ function App() {
     <>
     <My />
 
-    <h1>Hello Username is {username} </h1>
+    <h1 >Hello Username is {username} </h1>
     </>
   )
 }
